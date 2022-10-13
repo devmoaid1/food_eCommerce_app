@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="22.983" viewBox="0 0 23 22.983">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_20191" data-name="Path 20191" d="M348.5-30a1.5,1.5,0,0,1-1.5-1.5,1.5,1.5,0,0,1,1.5-1.5,1.5,1.5,0,0,1,1.5,1.5A1.5,1.5,0,0,1,348.5-30Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_20190" data-name="Path 20190" d="M0,0H375V-792H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_22866" data-name="Group 22866" transform="translate(-10023.5 -3153.517)">
+    <g id="Group_16099" data-name="Group 16099" transform="translate(9693 3196)" clip-path="url(#clip-path)">
+      <g id="Group_16098" data-name="Group 16098" clip-path="url(#clip-path-2)">
+        <path id="Path_20189" data-name="Path 20189" d="M342-38h13v13H342Z" fill="#949494"/>
+      </g>
+    </g>
+    <g id="Group_16095" data-name="Group 16095" transform="translate(10024 3159)">
+      <path id="Path_20186" data-name="Path 20186" d="M19.25,0H2.75A2.907,2.907,0,0,0,0,2.742V14.469A2.535,2.535,0,0,0,2.539,17H19.461A2.535,2.535,0,0,0,22,14.469V2.657A2.835,2.835,0,0,0,19.25,0Z" fill="none" stroke="#949494" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <g id="Group_16096" data-name="Group 16096" transform="translate(10024 3154)">
+      <path id="Path_20187" data-name="Path 20187" d="M17,3.82V1.989C17,.164,16.618-.362,14.422.235,12.809.674,3.372,3.372,3.372,3.372.465,4.5.022,5.464.022,7.655L0,9" fill="none" stroke="#949494" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
