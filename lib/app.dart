@@ -21,7 +21,7 @@ class App extends StatelessWidget {
         title: 'Flutter Task',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          backgroundColor: const Color(0xFFFDFFFF),
+          backgroundColor: Colors.white,
           primaryColor: const Color(0xFFEE6A61),
           fontFamily: "Poppins",
           primarySwatch: Colors.blue,

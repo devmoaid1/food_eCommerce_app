@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task_app/data/models/address.dart';
 
 import '../../../core/theme/colors.dart';
 
 class ArddressCard extends StatelessWidget {
-  final String addressTitle;
-  final String addressStreet;
-  final String addressFloor;
-  const ArddressCard(
-      {super.key,
-      required this.addressFloor,
-      required this.addressStreet,
-      required this.addressTitle});
+  final Address address;
+  // final String addressTitle;
+  // final String addressStreet;
+  // final String addressFloor;
+  const ArddressCard({super.key, required this.address});
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +33,19 @@ class ArddressCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                addressTitle,
+                address.type == "home" ? "Home Address" : "Office Address",
                 style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w600),
               ),
               Text(
-                addressStreet,
+                address.title ?? "",
                 style: TextStyle(
                   fontSize: 9.sp,
                 ),
               ),
               Text(
-                addressFloor,
+                address.type == "home"
+                    ? address.street ?? ""
+                    : address.floor ?? "",
                 style: TextStyle(
                   fontSize: 9.sp,
                 ),
