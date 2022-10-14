@@ -1,0 +1,11 @@
+{
+    "product":{
+        "name": "Mega Whopper",
+        "imagePath": "imagePath",
+        "id": 5,
+        "stock": 100,
+        "originalPrice": 50,
+        "currentPrice": 25
+    },
+    "dueDate":"24 November 2022"
+}

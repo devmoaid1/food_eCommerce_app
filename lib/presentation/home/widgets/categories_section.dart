@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task_app/presentation/home/home_viewmodel.dart';
+import 'package:flutter_task_app/presentation/home/widgets/category_card.dart';
 
 import '../../../core/theme/colors.dart';
 
 class CategoriesSection extends StatelessWidget {
-  const CategoriesSection({super.key});
+  final HomeViewModel homeViewModel;
+  const CategoriesSection({super.key, required this.homeViewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class CategoriesSection extends StatelessWidget {
               style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w600),
             ),
             Text(
-              "See All (36)",
+              "See All (${homeViewModel.categories.isNotEmpty ? homeViewModel.categories.length : 9})",
               style: TextStyle(
                   fontSize: 9.sp, color: AppColors.secondaryTextColor),
             )
@@ -28,29 +31,12 @@ class CategoriesSection extends StatelessWidget {
         SizedBox(
           height: 120.h,
           child: ListView.builder(
-            itemCount: 8,
+            itemCount: homeViewModel.categories.length,
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(vertical: 10.h),
             itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(right: 10.w),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Container(
-                          width: 56.w,
-                          height: 56.w,
-                          color: AppColors.addressCardColor),
-                    ),
-                    Text(
-                      "Steak",
-                      style: TextStyle(fontSize: 9.sp),
-                    )
-                  ],
-                ),
-              );
+              return CategoryCard(category: homeViewModel.categories[index]);
             },
           ),
         )

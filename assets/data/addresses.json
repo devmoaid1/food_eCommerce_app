@@ -1,0 +1,14 @@
+[
+    {
+        "type":"home",
+        "title":"Mustafa St. No:2",
+        "street":"Street x12",
+        "floor":"Floor 4"
+    },
+    {
+        "type":"office",
+        "title":"Oxford st. 1300",
+        "street":"Street 1300",
+        "floor":"Floor 2,No.4"
+    }
+]

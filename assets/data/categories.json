@@ -1,0 +1,34 @@
+[
+    {
+        "name": "steak",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Vegetables",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Beverages",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Fish",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Juice",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Desserts",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Pizzas",
+        "imagePath": "imagePath" 
+    },
+    {
+        "name": "Burgers",
+        "imagePath": "imagePath" 
+    }
+]
