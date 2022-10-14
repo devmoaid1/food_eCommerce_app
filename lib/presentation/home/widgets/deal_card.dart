@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_task_app/presentation/home/home_viewmodel.dart';
 import 'package:get/get.dart';
 
 import '../../../core/assets/icons.dart';
@@ -9,7 +10,13 @@ import '../../../data/models/deal.dart';
 
 class DealCard extends StatelessWidget {
   final Deal deal;
-  const DealCard({super.key, required this.deal});
+  final bool isExist;
+  final HomeViewModel homeViewModel;
+  const DealCard(
+      {super.key,
+      required this.deal,
+      required this.isExist,
+      required this.homeViewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +37,31 @@ class DealCard extends StatelessWidget {
                     color: AppColors.addressCardColor),
               ),
               Positioned(
-                child: Container(
-                  width: 24.w,
-                  height: 24.w,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      AppIcons.favoritesFilledIcon,
-                      color: Theme.of(context).primaryColor,
-                      height: 11.h,
+                child: GestureDetector(
+                  onTap: () {
+                    if (!isExist) {
+                      homeViewModel.addItemToFavorites(deal.product!);
+                    } else {
+                      homeViewModel.removeItemFromFavorites(deal.product!);
+                    }
+                  },
+                  child: Container(
+                    width: 24.w,
+                    height: 24.w,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: SvgPicture.asset(
+                        isExist
+                            ? AppIcons.favoritesFilledIcon
+                            : AppIcons.favoritesIcon,
+                        color: isExist
+                            ? Theme.of(context).primaryColor
+                            : AppColors.disabledColor,
+                        height: 11.h,
+                      ),
                     ),
                   ),
                 ),

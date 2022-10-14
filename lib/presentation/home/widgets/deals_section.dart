@@ -25,7 +25,16 @@ class DealsSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return DealCard(deal: homeViewModel.currentDeals[index]);
+              final deal = homeViewModel.currentDeals[index];
+              bool isExistInFav =
+                  homeViewModel.isItemInFavorites(deal.product!);
+
+              return DealCard(
+                deal: homeViewModel.currentDeals[index],
+                homeViewModel: homeViewModel,
+                isExist: isExistInFav,
+                key: UniqueKey(),
+              );
             },
           ),
         )

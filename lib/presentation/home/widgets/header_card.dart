@@ -23,7 +23,7 @@ class HeaderCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: const BorderRadius.horizontal(
-                    left: Radius.circular(20), right: Radius.circular(10)),
+                    left: Radius.circular(20), right: Radius.circular(15)),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

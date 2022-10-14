@@ -5,6 +5,7 @@ import 'package:flutter_task_app/data/datasources/categories_datasource.dart';
 import 'package:flutter_task_app/data/datasources/deals_datasource.dart';
 import 'package:flutter_task_app/domain/controllers/cart_controller.dart';
 import 'package:flutter_task_app/domain/controllers/favorites_controller.dart';
+import 'package:flutter_task_app/presentation/favorites/favorites_viewmodel.dart';
 import 'package:flutter_task_app/presentation/home/home_viewmodel.dart';
 import 'package:flutter_task_app/presentation/main_navigation/main_navigation_viewmodel.dart';
 import 'package:get/get.dart';
@@ -50,7 +51,12 @@ void setupLocator() {
           dealsRepository: Get.find(),
           addressRepository: Get.find(),
           offerRepository: Get.find(),
-          categoriesRepository: Get.find()),
+          categoriesRepository: Get.find(),
+          cartController: Get.find(),
+          favoritesController: Get.find()),
+      fenix: true);
+
+  Get.lazyPut(() => FavoritesViewModel(favoritesController: Get.find()),
       fenix: true);
 
   Get.lazyPut(() => MainNavigationViewModel());

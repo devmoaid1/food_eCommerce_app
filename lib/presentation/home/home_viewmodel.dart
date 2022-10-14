@@ -1,5 +1,8 @@
 import 'package:flutter_task_app/data/models/category.dart';
 import 'package:flutter_task_app/data/models/offer.dart';
+import 'package:flutter_task_app/data/models/product.dart';
+import 'package:flutter_task_app/domain/controllers/cart_controller.dart';
+import 'package:flutter_task_app/domain/controllers/favorites_controller.dart';
 import 'package:flutter_task_app/domain/repositories/addresses_repository.dart';
 import 'package:flutter_task_app/domain/repositories/categories_repository.dart';
 import 'package:flutter_task_app/domain/repositories/deals_repository.dart';
@@ -15,11 +18,16 @@ class HomeViewModel extends GetxController {
   final OfferRepository offerRepository;
   final CategoriesRepository categoriesRepository;
 
+  final CartController cartController;
+  final FavoritesController favoritesController;
+
   HomeViewModel(
       {required this.dealsRepository,
       required this.addressRepository,
       required this.offerRepository,
-      required this.categoriesRepository});
+      required this.categoriesRepository,
+      required this.cartController,
+      required this.favoritesController});
   List<Address> _addresses = [];
   List<Category> _categories = [];
   List<Deal> _deals = [];
@@ -57,5 +65,25 @@ class HomeViewModel extends GetxController {
   void getAllCategories() async {
     _categories = await categoriesRepository.getAllCategories();
     update();
+  }
+
+  void addItemToFavorites(Product product) {
+    favoritesController.addToFavorites(product);
+
+    update();
+  }
+
+  void removeItemFromFavorites(Product product) {
+    favoritesController.removeFavorite(product);
+    update();
+  }
+
+  bool isItemInFavorites(Product product) {
+    bool isExist = false;
+    // check is item in favorites if favorites not empty
+    if (favoritesController.favorites.isNotEmpty) {
+      isExist = favoritesController.favorites.contains(product);
+    }
+    return isExist;
   }
 }
