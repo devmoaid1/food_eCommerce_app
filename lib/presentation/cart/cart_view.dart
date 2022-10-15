@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_task_app/core/theme/colors.dart';
-import 'package:flutter_task_app/data/models/cart_item.dart';
-import 'package:flutter_task_app/data/models/product.dart';
+import 'package:flutter_task_app/presentation/cart/cart_viewmodel.dart';
 import 'package:flutter_task_app/presentation/cart/widgets/cart_item_card.dart';
 import 'package:flutter_task_app/presentation/home/widgets/header_card.dart';
+import 'package:get/get.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -28,25 +27,31 @@ class CartView extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 4,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return const CartItemCard(
-                      cartItem: CartItem(
-                          totalPrice: 25,
-                          quantity: 1,
-                          product: Product(
-                              name: "salmon",
-                              currentPrice: 25,
-                              id: 1,
-                              imagePath: "",
-                              originalPrice: 30,
-                              stock: 10)));
-                },
-              ),
-            )
+            GetBuilder<CartViewModel>(builder: (controller) {
+              return controller.cart.isNotEmpty
+                  ? Expanded(
+                      child: ListView.builder(
+                        itemCount: controller.cart.length,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          final cartItem = controller.cart[index];
+                          return CartItemCard(
+                            cartItem: cartItem,
+                            cartViewModel: controller,
+                          );
+                        },
+                      ),
+                    )
+                  : Expanded(
+                      child: Center(
+                        child: Text(
+                          "Cart is Empty",
+                          style: TextStyle(
+                              fontSize: 13.sp, fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                    );
+            })
           ],
         ),
       ),

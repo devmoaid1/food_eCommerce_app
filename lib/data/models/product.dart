@@ -5,8 +5,8 @@ class Product extends Equatable {
   final String? imagePath;
   final int? id;
   final int? stock;
-  final int? originalPrice;
-  final int? currentPrice;
+  final double? originalPrice;
+  final double? currentPrice;
 
   const Product({
     this.name,
@@ -23,8 +23,8 @@ class Product extends Equatable {
       imagePath: json['imagePath'] as String?,
       id: json['id'] as int?,
       stock: json['stock'] as int?,
-      originalPrice: json['originalPrice'] as int?,
-      currentPrice: json['currentPrice'] as int?,
+      originalPrice: json['originalPrice'] as double?,
+      currentPrice: json['currentPrice'] as double?,
     );
   }
 
@@ -44,8 +44,8 @@ class Product extends Equatable {
     String? imagePath,
     int? id,
     int? stock,
-    int? originalPrice,
-    int? currentPrice,
+    double? originalPrice,
+    double? currentPrice,
   }) {
     return Product(
       name: name ?? this.name,

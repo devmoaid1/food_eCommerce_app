@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task_app/data/models/cart_item.dart';
+import 'package:flutter_task_app/presentation/cart/cart_viewmodel.dart';
 
 import '../../../core/theme/colors.dart';
 
 class CartItemCard extends StatelessWidget {
   final CartItem cartItem;
-  const CartItemCard({super.key, required this.cartItem});
+  final CartViewModel cartViewModel;
+  const CartItemCard(
+      {super.key, required this.cartItem, required this.cartViewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +74,13 @@ class CartItemCard extends StatelessWidget {
             child: Row(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    if (cartItem.quantity == 1) {
+                      cartViewModel.removefromCart(cartItem);
+                    } else {
+                      cartViewModel.decrementQuantity(cartItem);
+                    }
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
@@ -94,7 +103,9 @@ class CartItemCard extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    cartViewModel.incrementQuantity(cartItem);
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Container(

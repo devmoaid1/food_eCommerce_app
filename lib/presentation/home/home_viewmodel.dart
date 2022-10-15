@@ -1,3 +1,4 @@
+import 'package:flutter_task_app/data/models/cart_item.dart';
 import 'package:flutter_task_app/data/models/category.dart';
 import 'package:flutter_task_app/data/models/offer.dart';
 import 'package:flutter_task_app/data/models/product.dart';
@@ -75,6 +76,14 @@ class HomeViewModel extends GetxController {
 
   void removeItemFromFavorites(Product product) {
     favoritesController.removeFavorite(product);
+    update();
+  }
+
+  void addToCart(Product product) {
+    final cartItem = CartItem(
+        product: product, quantity: 1, totalPrice: product.currentPrice);
+
+    cartController.addToCart(cartItem);
     update();
   }
 

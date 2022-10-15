@@ -65,6 +65,27 @@ class DealCard extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              Positioned(
+                right: 0,
+                child: GestureDetector(
+                  onTap: () => homeViewModel.addToCart(deal.product!),
+                  child: Container(
+                    width: 24.w,
+                    height: 24.w,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: SvgPicture.asset(
+                        AppIcons.cartIcon,
+                        color: AppColors.disabledColor,
+                        height: 11.h,
+                      ),
+                    ),
+                  ),
+                ),
               )
             ],
           ),

@@ -4,8 +4,8 @@
         "imagePath": "imagePath",
         "id": 5,
         "stock": 100,
-        "originalPrice": 50,
-        "currentPrice": 25
+        "originalPrice": 50.0,
+        "currentPrice": 25.0
     },
     "dueDate":"24 November 2022"
 }

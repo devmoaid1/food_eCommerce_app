@@ -4,8 +4,8 @@
       "imagePath": "imagePath",
       "id": 1,
       "stock": 12,
-      "originalPrice": 18,
-      "currentPrice": 10
+      "originalPrice": 18.0,
+      "currentPrice": 10.0
 
     },
     {
@@ -13,8 +13,8 @@
         "imagePath": "imagePath",
         "id": 2,
         "stock": 8,
-        "originalPrice": 25,
-        "currentPrice": 20
+        "originalPrice": 25.0,
+        "currentPrice": 20.0
   
       },
       {
@@ -22,8 +22,8 @@
         "imagePath": "imagePath",
         "id": 3,
         "stock": 20,
-        "originalPrice": 33,
-        "currentPrice": 21
+        "originalPrice": 33.0,
+        "currentPrice": 21.0
   
       },
       {
@@ -31,8 +31,8 @@
         "imagePath": "imagePath",
         "id": 4,
         "stock": 5,
-        "originalPrice": 10,
-        "currentPrice": 5
+        "originalPrice": 10.0,
+        "currentPrice": 5.0
   
       }
 ]
