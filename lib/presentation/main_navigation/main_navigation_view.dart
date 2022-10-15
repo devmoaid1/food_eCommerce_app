@@ -1,5 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_task_app/core/theme/colors.dart';
+import 'package:flutter_task_app/domain/controllers/cart_controller.dart';
 import 'package:flutter_task_app/presentation/cart/cart_view.dart';
 import 'package:flutter_task_app/presentation/favorites/favorites_view.dart';
 import 'package:flutter_task_app/presentation/home/home_view.dart';
@@ -7,6 +11,8 @@ import 'package:flutter_task_app/presentation/main_navigation/main_navigation_vi
 import 'package:flutter_task_app/presentation/main_navigation/widgets/bottom_navigation.dart';
 import 'package:flutter_task_app/presentation/news/news_view.dart';
 import 'package:get/get.dart';
+
+import '../../core/assets/icons.dart';
 
 class MainNavigationView extends StatelessWidget {
   const MainNavigationView({super.key});
@@ -35,6 +41,35 @@ class MainNavigationView extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.cartIndicatorColor,
+        onPressed: () {},
+        child: Stack(
+          children: [
+            SvgPicture.asset(
+              AppIcons.cartIndicatorIcon,
+              height: 31.h,
+              color: Colors.white,
+            ),
+            GetBuilder<CartController>(builder: (controller) {
+              return Obx((() {
+                return Positioned(
+                  bottom: 15,
+                  left: 0,
+                  child: Text(
+                    "\$${controller.subTotal.value.toStringAsFixed(0)}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 11.sp),
+                  ),
+                );
+              }));
+            })
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const BottomNavigation(),
     );
   }

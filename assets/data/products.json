@@ -1,25 +1,23 @@
 [
-    {
-      "name": "Pringles Chips ",
-      "imagePath": "imagePath",
-      "id": 1,
-      "stock": 12,
-      "originalPrice": 18.0,
-      "currentPrice": 10.0
-
-    },
-    {
-        "name": "Salmon",
-        "imagePath": "imagePath",
-        "id": 2,
-        "stock": 8,
-        "originalPrice": 25.0,
-        "currentPrice": 20.0
-  
-      },
+  {
+    "name": "Pringles Chips ",
+    "imagePath": "assets/images/pringles.png",
+    "id": 1,
+    "stock": 12,
+    "originalPrice": 18.0,
+    "currentPrice": 10.0
+  },
+  {
+    "name": "Salmon",
+    "imagePath": "assets/images/salmon.png",
+    "id": 2,
+    "stock": 8,
+    "originalPrice": 25.0,
+    "currentPrice": 20.0
+   },
       {
         "name": "Al Malika Rice",
-        "imagePath": "imagePath",
+        "imagePath": "assets/images/rice.png",
         "id": 3,
         "stock": 20,
         "originalPrice": 33.0,
@@ -28,7 +26,7 @@
       },
       {
         "name": "Deluxe Cookies",
-        "imagePath": "imagePath",
+        "imagePath": "assets/images/deluxe.png",
         "id": 4,
         "stock": 5,
         "originalPrice": 10.0,

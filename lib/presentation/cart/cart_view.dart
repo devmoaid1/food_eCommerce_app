@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task_app/core/widgets/No_data_indicator.dart';
 import 'package:flutter_task_app/presentation/cart/cart_viewmodel.dart';
 import 'package:flutter_task_app/presentation/cart/widgets/cart_item_card.dart';
 import 'package:flutter_task_app/presentation/home/widgets/header_card.dart';
@@ -42,15 +43,10 @@ class CartView extends StatelessWidget {
                         },
                       ),
                     )
-                  : Expanded(
-                      child: Center(
-                        child: Text(
-                          "Cart is Empty",
-                          style: TextStyle(
-                              fontSize: 13.sp, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    );
+                  : const Expanded(
+                      child: NoDataIndicator(
+                      message: "Cart is Empty",
+                    ));
             })
           ],
         ),

@@ -21,7 +21,7 @@ class DealsSection extends StatelessWidget {
           child: ListView.builder(
             key: UniqueKey(),
             itemCount: homeViewModel.currentDeals.length,
-            padding: EdgeInsets.symmetric(vertical: 5.h),
+            padding: EdgeInsets.symmetric(vertical: 10.h),
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             itemBuilder: (context, index) {

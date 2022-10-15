@@ -2,7 +2,7 @@
     {
         "product":{
             "name": "Pringles Chips ",
-            "imagePath": "imagePath",
+            "imagePath": "assets/images/pringles.png",
             "id": 1,
             "stock": 12,
             "originalPrice": 18.0,
@@ -13,7 +13,7 @@
     {
         "product":{
             "name": "Salmon",
-            "imagePath": "imagePath",
+            "imagePath": "assets/images/salmon.png",
             "id": 2,
             "stock": 8,
             "originalPrice": 25.0,
@@ -24,7 +24,7 @@
     {
         "product":{
         "name": "Al Malika Rice",
-        "imagePath": "imagePath",
+        "imagePath": "assets/images/rice.png",
         "id": 3,
         "stock": 20,
         "originalPrice": 33.0,
@@ -35,7 +35,7 @@
     {
         "product":{
         "name": "Deluxe Cookies",
-        "imagePath": "imagePath",
+        "imagePath": "assets/images/deluxe.png",
         "id": 4,
         "stock": 5,
         "originalPrice": 10.0,

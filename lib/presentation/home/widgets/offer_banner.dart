@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/theme/colors.dart';
+import '../../../data/models/offer.dart';
 
 class OfferBanner extends StatelessWidget {
-  const OfferBanner({
-    Key? key,
-  }) : super(key: key);
+  final Offer offer;
+  const OfferBanner({Key? key, required this.offer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,9 @@ class OfferBanner extends StatelessWidget {
       child: LayoutBuilder(builder: (context, constraints) {
         return Row(
           children: [
-            Container(
-              width: (constraints.biggest.width / 2) - 20,
+            SizedBox(
+              width: (constraints.biggest.width / 2) - 20.w,
+              child: Image.asset(offer.product!.imagePath!, fit: BoxFit.fill),
             ),
             Container(
               padding: EdgeInsets.symmetric(vertical: 8.h),
@@ -27,12 +28,12 @@ class OfferBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Mega",
+                    offer.product!.name!.split(" ")[0],
                     style: TextStyle(
                         fontSize: 11.sp, color: Theme.of(context).primaryColor),
                   ),
                   Text(
-                    "Whopper".toUpperCase(),
+                    offer.product!.name!.split(" ")[1].toUpperCase(),
                     style: TextStyle(
                         fontSize: 31.sp,
                         fontWeight: FontWeight.w700,
@@ -41,7 +42,7 @@ class OfferBanner extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "\$ 12",
+                        "\$ ${offer.product!.currentPrice}",
                         style: TextStyle(
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w700,
@@ -51,7 +52,7 @@ class OfferBanner extends StatelessWidget {
                         width: 40.w,
                       ),
                       Text(
-                        "\$ 18",
+                        "\$${offer.product!.originalPrice}",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 18.sp,
@@ -64,8 +65,11 @@ class OfferBanner extends StatelessWidget {
                     height: 8.h,
                   ),
                   Text(
-                    "* Available until 24 December 2020",
-                    style: TextStyle(fontSize: 9.sp, color: Colors.white),
+                    "* Available until ${offer.dueDate}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 9.sp,
+                        color: Colors.white),
                   ),
                 ],
               ),

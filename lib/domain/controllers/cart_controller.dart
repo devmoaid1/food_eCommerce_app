@@ -29,6 +29,8 @@ class CartController extends GetxController {
         cartItem.totalPrice! + cartItem.product!.currentPrice!;
 
     _subTotal.value += cartItem.product!.currentPrice!;
+
+    update();
   }
 
   void decrementQuantity(CartItem cartItem) {
@@ -39,6 +41,20 @@ class CartController extends GetxController {
 
       _subTotal.value -= cartItem.product!.currentPrice!;
     }
+
+    update();
+  }
+
+  bool isItemExistInCart(CartItem cartItem) {
+    bool isExist = false;
+
+    for (var element in _cartItems.value) {
+      if (cartItem.product!.id == element.product!.id) {
+        isExist = true;
+      }
+    }
+
+    return isExist;
   }
 
   void calculateSubTotal() {

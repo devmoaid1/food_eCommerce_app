@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_task_app/core/assets/icons.dart';
 import 'package:flutter_task_app/core/theme/colors.dart';
 import 'package:flutter_task_app/presentation/main_navigation/main_navigation_viewmodel.dart';
@@ -53,21 +52,6 @@ class BottomNavigation extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          top: 0,
-          left: 180,
-          child: ClipOval(
-            child: Container(
-              width: 40,
-              height: 40,
-              color: Theme.of(context).primaryColor,
-              child: SvgPicture.asset(
-                AppIcons.pinLocationIcon,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        )
       ]),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theme/colors.dart';
 import '../../../data/models/category.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -15,9 +14,15 @@ class CategoryCard extends StatelessWidget {
       child: Column(
         children: [
           ClipRRect(
+            clipBehavior: Clip.antiAlias,
             borderRadius: BorderRadius.circular(10),
-            child: Container(
-                width: 56.w, height: 56.w, color: AppColors.addressCardColor),
+            child: SizedBox(
+                width: 56.w,
+                height: 56.w,
+                child: Image.asset(
+                  category.imagePath!,
+                  fit: BoxFit.fill,
+                )),
           ),
           SizedBox(
             height: 5.h,

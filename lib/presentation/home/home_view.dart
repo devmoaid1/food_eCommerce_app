@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task_app/data/models/address.dart';
@@ -37,8 +39,15 @@ class HomeView extends StatelessWidget {
             // main sections
 
             SliverToBoxAdapter(
-                child: GetBuilder<HomeViewModel>(
-              builder: ((controller) => Padding(
+                child: GetBuilder<HomeViewModel>(builder: ((controller) {
+              return Obx((() {
+                if (controller.isLoading.isTrue) {
+                  return Center(
+                    child: CircularProgressIndicator.adaptive(
+                        backgroundColor: Theme.of(context).primaryColor),
+                  );
+                } else {
+                  return Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.h),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,6 +85,10 @@ class HomeView extends StatelessWidget {
                           ],
                         ),
 
+                        SizedBox(
+                          height: 15.h,
+                        ),
+
                         CategoriesSection(
                           homeViewModel: controller,
                         ),
@@ -83,11 +96,19 @@ class HomeView extends StatelessWidget {
                         //deals Section
                         DealsSection(homeViewModel: controller),
 
-                        const OfferBanner()
+                        controller.currentOffer != null
+                            ? OfferBanner(
+                                offer: controller.currentOffer!,
+                              )
+                            : const Center(
+                                child: CircularProgressIndicator.adaptive(),
+                              )
                       ],
                     ),
-                  )),
-            ))
+                  );
+                }
+              }));
+            })))
           ],
         ),
       ),

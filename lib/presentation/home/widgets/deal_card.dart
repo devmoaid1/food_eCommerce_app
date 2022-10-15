@@ -30,11 +30,17 @@ class DealCard extends StatelessWidget {
           Stack(
             children: [
               ClipRRect(
+                clipBehavior: Clip.antiAlias,
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                    width: 90.w,
-                    height: 90.w,
-                    color: AppColors.addressCardColor),
+                  width: 90.w,
+                  height: 90.w,
+                  color: AppColors.addressCardColor,
+                  child: Image.asset(
+                    deal.product!.imagePath!,
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
               Positioned(
                 child: GestureDetector(
@@ -66,27 +72,6 @@ class DealCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                right: 0,
-                child: GestureDetector(
-                  onTap: () => homeViewModel.addToCart(deal.product!),
-                  child: Container(
-                    width: 24.w,
-                    height: 24.w,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                    child: Center(
-                      child: SvgPicture.asset(
-                        AppIcons.cartIcon,
-                        color: AppColors.disabledColor,
-                        height: 11.h,
-                      ),
-                    ),
-                  ),
-                ),
-              )
             ],
           ),
           SizedBox(
@@ -141,7 +126,7 @@ class DealCard extends StatelessWidget {
                         color: Theme.of(context).primaryColor),
                   ),
                   SizedBox(
-                    width: 5.w,
+                    width: 8.w,
                   ),
                   Text(
                     "\$ ${deal.product!.originalPrice}",
@@ -150,8 +135,19 @@ class DealCard extends StatelessWidget {
                         fontSize: 13.sp,
                         decoration: TextDecoration.lineThrough,
                         decorationThickness: 2),
-                  )
+                  ),
                 ],
+              ),
+              GestureDetector(
+                onTap: () => homeViewModel.addToCart(deal.product!),
+                child: Text(
+                  "Add to Cart",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 13.sp,
+                  ),
+                ),
               )
             ],
           )

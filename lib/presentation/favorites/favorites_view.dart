@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task_app/core/widgets/No_data_indicator.dart';
 import 'package:flutter_task_app/presentation/favorites/favorites_viewmodel.dart';
 import 'package:flutter_task_app/presentation/favorites/widgets/favorite_card.dart';
 import 'package:flutter_task_app/presentation/home/widgets/header_card.dart';
@@ -41,15 +42,9 @@ class FavoritesView extends StatelessWidget {
                         },
                       ),
                     )
-                  : Expanded(
-                      child: Center(
-                        child: Text(
-                          "No Favorites at the moment",
-                          style: TextStyle(
-                              fontSize: 13.sp, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    );
+                  : const Expanded(
+                      child: NoDataIndicator(
+                          message: "No Favorites at the moment"));
             }))
           ],
         ),

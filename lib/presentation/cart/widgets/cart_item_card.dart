@@ -94,13 +94,16 @@ class CartItemCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.w),
-                  child: Text(
-                    cartItem.quantity.toString(),
-                    style:
-                        TextStyle(fontSize: 19.sp, fontWeight: FontWeight.bold),
-                  ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Text(
+                  cartItem.quantity.toString(),
+                  style:
+                      TextStyle(fontSize: 19.sp, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 10.w,
                 ),
                 InkWell(
                   onTap: () {

@@ -1,34 +1,31 @@
 [
     {
         "name": "steak",
-        "imagePath": "imagePath" 
+        "imagePath": "assets/images/steak.png" 
     },
     {
         "name": "Vegetables",
-        "imagePath": "imagePath" 
-    },
-    {
-        "name": "Beverages",
-        "imagePath": "imagePath" 
-    },
-    {
-        "name": "Fish",
-        "imagePath": "imagePath" 
-    },
-    {
-        "name": "Juice",
-        "imagePath": "imagePath" 
-    },
-    {
-        "name": "Desserts",
-        "imagePath": "imagePath" 
+        "imagePath": "assets/images/veg.png" 
     },
     {
         "name": "Pizzas",
-        "imagePath": "imagePath" 
+        "imagePath": "assets/images/pizzas.png" 
     },
     {
         "name": "Burgers",
-        "imagePath": "imagePath" 
+        "imagePath": "assets/images/burger.png" 
+    },
+    {
+        "name": "Beverages",
+        "imagePath": "assets/images/juice.png" 
+    },
+    {
+        "name": "Fish",
+        "imagePath": "assets/images/fish.png" 
+    },
+    {
+        "name": "Juice",
+        "imagePath": "assets/images/juice.png" 
     }
+      
 ]

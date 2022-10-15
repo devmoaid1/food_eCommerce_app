@@ -13,4 +13,5 @@ class AppColors {
   static const Color cartPriceTextColor = Color(0xffB13E55);
   static const Color quantityCardColor = Color(0xffB0EAFD);
   static const Color addIconColor = Color(0xff45B1DB);
+  static const Color cartIndicatorColor = Color(0xffD93E11);
 }

@@ -1,7 +1,7 @@
 {
     "product":{
         "name": "Mega Whopper",
-        "imagePath": "imagePath",
+        "imagePath": "assets/images/whopper.png",
         "id": 5,
         "stock": 100,
         "originalPrice": 50.0,

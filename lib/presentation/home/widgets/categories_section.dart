@@ -29,7 +29,7 @@ class CategoriesSection extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 120.h,
+          height: 110.h,
           child: ListView.builder(
             itemCount: homeViewModel.categories.length,
             shrinkWrap: true,

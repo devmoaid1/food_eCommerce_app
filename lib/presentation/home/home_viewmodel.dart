@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_final_fields
+
+import 'package:flutter/material.dart';
+import 'package:flutter_task_app/core/utilites/show_snackbar.dart';
 import 'package:flutter_task_app/data/models/cart_item.dart';
 import 'package:flutter_task_app/data/models/category.dart';
 import 'package:flutter_task_app/data/models/offer.dart';
@@ -33,19 +37,28 @@ class HomeViewModel extends GetxController {
   List<Category> _categories = [];
   List<Deal> _deals = [];
   Offer? _currentOffer;
+  RxBool _isLoading = true.obs;
 
+  RxBool get isLoading => _isLoading;
   List<Address> get addresses => _addresses;
   List<Category> get categories => _categories;
   List<Deal> get currentDeals => _deals;
-  Offer get currentOffer => _currentOffer!;
+  Offer? get currentOffer => _currentOffer;
+
+  void setLoading(bool value) {
+    _isLoading.value = value;
+    update();
+  }
 
   @override
   void onInit() {
     super.onInit();
+
     getCurrentAddresses();
     getAllCategories();
     getCurrentDeals();
     getOffer();
+    setLoading(false);
   }
 
   void getCurrentDeals() async {
@@ -83,7 +96,23 @@ class HomeViewModel extends GetxController {
     final cartItem = CartItem(
         product: product, quantity: 1, totalPrice: product.currentPrice);
 
-    cartController.addToCart(cartItem);
+    final isExistInCart = cartController.isItemExistInCart(cartItem);
+
+    if (isExistInCart) {
+      showCustomSnackBar(
+          title: "info",
+          color: Colors.green,
+          message: "item already in cart",
+          textColor: Colors.white);
+    } else {
+      cartController.addToCart(cartItem);
+      showCustomSnackBar(
+          title: "info",
+          color: Colors.green,
+          message: "Added item to cart",
+          textColor: Colors.white);
+    }
+
     update();
   }
 

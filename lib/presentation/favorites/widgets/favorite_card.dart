@@ -19,7 +19,14 @@ class FavoriteCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Container(
-                width: 60.w, height: 60.h, color: AppColors.addressCardColor),
+              width: 60.w,
+              height: 60.h,
+              color: AppColors.addressCardColor,
+              child: Image.asset(
+                product.imagePath!,
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
           SizedBox(
             width: 10.w,
