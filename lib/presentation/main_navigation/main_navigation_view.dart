@@ -55,7 +55,7 @@ class MainNavigationView extends StatelessWidget {
               return Obx((() {
                 return Positioned(
                   bottom: 15,
-                  left: 0,
+                  left: -1,
                   child: Text(
                     "\$${controller.subTotal.value.toStringAsFixed(0)}",
                     style: TextStyle(

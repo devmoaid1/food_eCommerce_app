@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task_app/core/widgets/No_data_indicator.dart';
 import 'package:flutter_task_app/presentation/favorites/favorites_viewmodel.dart';
 import 'package:flutter_task_app/presentation/favorites/widgets/favorite_card.dart';
-import 'package:flutter_task_app/presentation/home/widgets/header_card.dart';
+
 import 'package:get/get.dart';
+
+import '../../core/widgets/header_card.dart';
 
 class FavoritesView extends StatelessWidget {
   const FavoritesView({super.key});

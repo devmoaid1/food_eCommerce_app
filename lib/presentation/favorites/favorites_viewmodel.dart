@@ -13,7 +13,6 @@ class FavoritesViewModel extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     getFavorites();
   }

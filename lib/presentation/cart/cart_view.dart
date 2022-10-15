@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task_app/core/widgets/No_data_indicator.dart';
 import 'package:flutter_task_app/presentation/cart/cart_viewmodel.dart';
 import 'package:flutter_task_app/presentation/cart/widgets/cart_item_card.dart';
-import 'package:flutter_task_app/presentation/home/widgets/header_card.dart';
+
 import 'package:get/get.dart';
+
+import '../../core/widgets/header_card.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});

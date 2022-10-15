@@ -25,6 +25,10 @@ class CartItemCard extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
                 width: 56.w,
                 height: 56.h,
+                child: Image.asset(
+                  cartItem.product!.imagePath!,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),

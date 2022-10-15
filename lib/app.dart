@@ -24,7 +24,6 @@ class App extends StatelessWidget {
           backgroundColor: Colors.white,
           primaryColor: const Color(0xFFEE6A61),
           fontFamily: "Poppins",
-          primarySwatch: Colors.blue,
         ),
         initialRoute: RouteHelper.getInitialRoute(),
         getPages: RouteHelper.routes,

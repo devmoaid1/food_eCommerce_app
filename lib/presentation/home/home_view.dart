@@ -7,10 +7,11 @@ import 'package:flutter_task_app/presentation/home/home_viewmodel.dart';
 import 'package:flutter_task_app/presentation/home/widgets/address_card.dart';
 import 'package:flutter_task_app/presentation/home/widgets/categories_section.dart';
 import 'package:flutter_task_app/presentation/home/widgets/deals_section.dart';
-import 'package:flutter_task_app/presentation/home/widgets/header_card.dart';
+
 import 'package:flutter_task_app/presentation/home/widgets/search_card.dart';
 import 'package:get/get.dart';
 
+import '../../core/widgets/header_card.dart';
 import 'widgets/offer_banner.dart';
 
 class HomeView extends StatelessWidget {
@@ -28,13 +29,6 @@ class HomeView extends StatelessWidget {
 
             // search
             const SliverToBoxAdapter(child: SearchCard()),
-
-            // address
-            // SliverToBoxAdapter(
-            //     child: Padding(
-            //   padding: EdgeInsets.symmetric(vertical: 12.h),
-            //   child:
-            // )),
 
             // main sections
 

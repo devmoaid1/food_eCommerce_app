@@ -63,7 +63,6 @@ class HomeViewModel extends GetxController {
 
   void getCurrentDeals() async {
     _deals = await dealsRepository.getAllDeals();
-    update();
   }
 
   void getOffer() async {
@@ -73,22 +72,30 @@ class HomeViewModel extends GetxController {
 
   void getCurrentAddresses() async {
     _addresses = await addressRepository.getAllAddressess();
-    update();
   }
 
   void getAllCategories() async {
     _categories = await categoriesRepository.getAllCategories();
-    update();
   }
 
   void addItemToFavorites(Product product) {
     favoritesController.addToFavorites(product);
+    showCustomSnackBar(
+        title: "info",
+        color: Colors.green,
+        message: "Added item to favorites",
+        textColor: Colors.white);
 
     update();
   }
 
   void removeItemFromFavorites(Product product) {
     favoritesController.removeFavorite(product);
+    showCustomSnackBar(
+        title: "info",
+        color: Colors.green,
+        message: "removed item from favorites",
+        textColor: Colors.white);
     update();
   }
 
@@ -112,8 +119,6 @@ class HomeViewModel extends GetxController {
           message: "Added item to cart",
           textColor: Colors.white);
     }
-
-    update();
   }
 
   bool isItemInFavorites(Product product) {

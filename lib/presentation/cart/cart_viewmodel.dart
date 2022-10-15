@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_use_of_protected_member
+
 import 'package:flutter_task_app/data/models/cart_item.dart';
 import 'package:flutter_task_app/domain/controllers/cart_controller.dart';
 import 'package:get/get.dart';
@@ -11,7 +13,6 @@ class CartViewModel extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     getCart();
   }

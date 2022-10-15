@@ -6,9 +6,7 @@ import '../../../core/theme/colors.dart';
 
 class ArddressCard extends StatelessWidget {
   final Address address;
-  // final String addressTitle;
-  // final String addressStreet;
-  // final String addressFloor;
+
   const ArddressCard({super.key, required this.address});
 
   @override
