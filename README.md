@@ -1,16 +1,20 @@
 # flutter_task_app
 
-A new Flutter project.
+flutter e_commerce application built with getx as state managment and dependency managment.
 
-## Getting Started
+<h1>screenshots</h1>
 
-This project is a starting point for a Flutter application.
+<h2>Home screen</h2> 
+<img src="screenshots/home.png"></img>
 
-A few resources to get you started if this is your first Flutter project:
+<h2> favorites screen </h2>
+<img src="screenshots/favorites.png"></img>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<h2> cart screen <h2>
+<img src="screenshots/cart.png"></img>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h2> cart empty <h2>
+<img src="screenshots/cart_empty.png"></img>
+
+<h2> favorites empty <h2>
+<img src="screenshots/favorites_empty.png"></img>
