@@ -1,4 +1,4 @@
-# flutter_task_app
+# Food eCommerce App
 
 flutter e_commerce application built with getx as state managment and dependency managment.
 
